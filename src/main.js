@@ -8,6 +8,8 @@ import home from './view/home.vue'
 import index from './view/index.vue'
 import table from './view/table.vue'
 import form from './view/form.vue'
+import tab from './view/tab.vue'
+import map from './view/map.vue'
 Vue.use(VueRouter)
 Vue.use(VueResource)
 // 实例化vue-router
@@ -26,6 +28,12 @@ router.map({
         },
         '/form': {
           component:form
+        },
+        '/tab': {
+          component:tab
+        },
+        '/map': {
+          component:map
         }
       }
     }

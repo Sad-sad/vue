@@ -9,8 +9,10 @@
     <div class="nav">
       <ul>
         <li v-link="{ path:'/index' }">首页</li>
-        <li v-link="{path:'/table'}">table</li>
-        <li v-link="{path:'/form'}">表单</li>
+        <li v-link="{ path:'/table' }">table</li>
+        <li v-link="{ path:'/form' }">表单</li>
+        <li v-link="{ path:'/tab' }">tab 切换</li>
+        <li v-link="{ path:'/map' }">地图</li>
       </ul>
     </div>
   </div>
@@ -91,6 +93,9 @@ export default {
   margin-right: 40px;
   color:#fff;
   line-height: 30px;
+}
+.nav li.v-link-active{
+  color: yellow;
 }
 .foot{
   height: 40px;
