@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require("webpack")
 // NodeJS中的Path对象，用于处理目录的对象，提高开发效率。
 // 模块导入
 module.exports = {
@@ -77,9 +78,16 @@ module.exports = {
         // 别名，可以直接使用别名来代表设定的路径以及其他
         alias: {
             filter: path.join(__dirname, './src/filters'),
-            components: path.join(__dirname, './src/components')
+            components: path.join(__dirname, './src/components'),
+            $: "zepto"
         }
     },
     // 开启source-map调试模式，webpack有多种source-map，在官网文档可以查到
-    devtool: 'eval-source-map'
+    devtool: 'eval-source-map',
+    plugins: [
+        new webpack.ProvidePlugin({
+            jQuery: "jquery",
+            $: "jquery"
+        })
+    ]
 };

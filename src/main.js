@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 
+import $ from 'jQuery'
 import App from './app.vue'
 import home from './view/home.vue'
 import index from './view/index.vue'

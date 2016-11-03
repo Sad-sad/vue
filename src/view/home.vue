@@ -17,7 +17,7 @@
   <div class="content">
     <router-view></router-view>
   </div>
-  <div class="go-top" v-if="">
+  <div class="go-top" v-show="showgotop" v-el:go-top @click="top()">
     <img src="http://www.51xuediannao.com/uploads/allimg/140105/1-140105142G5-50.gif" alt="" />
   </div>
   <div class="foot">
@@ -32,17 +32,34 @@
 <script>
 import hello from '../component/hello.vue'
 import toast from '../component/toast.vue'
+
 export default {
   name: 'home',
   data () {
     return {
-      show:false
+      show:false,
+      showgotop:false
     }
   },
   computed: {},
-  ready () {},
+  ready () {
+    this.gotop()
+  },
   attached () {},
   methods: {
+    gotop() {
+      var _self = this
+      $(window).on('scroll',function() {
+        if(document.body.scrollTop > 300){
+          _self.showgotop = true
+        }else{
+          _self.showgotop = false
+        }
+      })
+    },
+    top(){
+      document.body.scrollTop = 0
+    },
     showToast (){
       this.show = true
     }
