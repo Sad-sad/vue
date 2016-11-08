@@ -1,7 +1,7 @@
 var api = require('./api')
 
-const target = 'http://doctor.hotfix.gengmei.cc'
-// const target = 'http://localhost:10086'
+//const target = 'http://doctor.hotfix.gengmei.cc'
+const target = 'http://localhost:10086'
 // const target = 'http://doctor.hotfix1.gengmei.cc'
 
 // 可以修改请求内容

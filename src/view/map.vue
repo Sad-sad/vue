@@ -1,5 +1,5 @@
 <template lang="html">
-<h3>地图</h3>
+<h3>地SASASASAS图</h3>
 <div class="search-box">
   <input type="text" name="name" value="" placeholder="请输入搜索地址" v-model='search'>
   <button type="button" name="button" @click="searchmap()">搜索</button>

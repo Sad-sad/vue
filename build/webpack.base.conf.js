@@ -1,28 +1,14 @@
 var path = require('path');
 var webpack = require("webpack")
-// NodeJS中的Path对象，用于处理目录的对象，提高开发效率。
-// 模块导入
+
 module.exports = {
-    // 入口文件地址，不需要写完，会自动查找
     entry: './src/main',
     //输出位置
     output: {
-        path: path.join(__dirname, './dist'), //配置输出路径，文件地址，使用绝对路径形式
+        path: path.join(__dirname, './dist'),
         filename: '[name].js',
-        //关于filename 我们有个变量就是 [name] = entry的key  当然还有别的变量比如[id],[hash]等,大家可以自行发挥
-        //我们也能把filename写成  filename : [name]/[name].[name].js 也是可以的
-        //[name]这里是webpack提供的根据路口文件自动生成的名字
         publicPath: '/dist/'
-            // 公共文件生成的地址
     },
-    // 服务器配置相关，自动刷新!
-    devServer: {
-        historyApiFallback: true,
-        hot: false,
-        inline: true,
-        grogress: true,
-    },
-    // 加载器
     module: {
         // 加载器
         loaders: [
@@ -59,19 +45,15 @@ module.exports = {
             },
         ]
     },
-    // .vue的配置。需要单独出来配置
     vue: {
         loaders: {
             css: 'style!css!autoprefixer'
         }
     },
-    // 配置babel转化成es5的语法
     babel: {
         presets: ['es2015'],
         plugins: ['transform-runtime']
     },
-    // plugins，还没用到
-    // 这里我就只用到一个就是生成 独立的css文件,style嵌套在页面里的方式实在是丑得不行
     resolve: {
         // require时省略的扩展名，如：require('module') 不需要module.js
         extensions: ['', '.js', '.vue'],
@@ -83,11 +65,5 @@ module.exports = {
         }
     },
     // 开启source-map调试模式，webpack有多种source-map，在官网文档可以查到
-    devtool: 'eval-source-map',
-    plugins: [
-        new webpack.ProvidePlugin({
-            jQuery: "jquery",
-            $: "jquery"
-        })
-    ]
+    devtool: 'eval-source-map'
 };
