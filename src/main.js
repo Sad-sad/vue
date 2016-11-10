@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 
-import $ from 'jQuery'
+import $ from 'jquery'
 import App from './app.vue'
 import home from './view/home.vue'
 import index from './view/index.vue'
@@ -10,6 +10,7 @@ import table from './view/table.vue'
 import form from './view/form.vue'
 import tab from './view/tab.vue'
 import map from './view/map.vue'
+import select from './view/select.vue'
 Vue.use(VueRouter)
 Vue.use(VueResource)
 // 实例化vue-router
@@ -34,6 +35,9 @@ router.map({
         },
         '/map': {
           component:map
+        },
+        '/select': {
+          component:select
         }
       }
     }

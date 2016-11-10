@@ -1,8 +1,7 @@
 var path = require('path');
 var webpack = require("webpack")
-
 module.exports = {
-    entry: './src/main',
+    entry: path.resolve(__dirname, "../src/main.js"),
     //输出位置
     output: {
         path: path.join(__dirname, './dist'),
@@ -32,13 +31,7 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif)$/,
                 loader: 'url-loader?limit=8192'
-                /*query: {
-                    limit: 10000,
-                    name: './images/[name].[ext]?[hash:8]'
-                }*/
-                //在这无论是直接loader 后面跟参数(像url跟参一样),或者是后面跟着一个对象 query,都是可以的.类似get请求？
             },
-            //html模板编译？
             {
                 test: /\.(html|tpl)$/,
                 loader: 'html-loader'
@@ -64,6 +57,12 @@ module.exports = {
             $: "zepto"
         }
     },
+    plugins: [
+       new webpack.ProvidePlugin({
+           $: "jquery",
+           jQuery: "jquery"
+       })
+    ],
     // 开启source-map调试模式，webpack有多种source-map，在官网文档可以查到
     devtool: 'eval-source-map'
 };

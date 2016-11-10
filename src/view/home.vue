@@ -13,6 +13,7 @@
         <li v-link="{ path:'/form' }">表单</li>
         <li v-link="{ path:'/tab' }">tab 切换</li>
         <li v-link="{ path:'/map' }">地图</li>
+        <li v-link="{ path:'/select' }">select</li>
       </ul>
     </div>
   </div>
@@ -51,7 +52,7 @@ export default {
   methods: {
     gotop() {
       var _self = this
-      $(window).on('scroll',function() {
+      window.addEventListener('scroll',function(){
         if(document.body.scrollTop > 300){
           _self.showgotop = true
         }else{
@@ -85,8 +86,8 @@ export default {
 }
 .nav{
   margin: 0  auto;
-  height: 30px;
   background: #06babc;
+  overflow: hidden;
 }
 .nav li{
   float: left;
@@ -109,7 +110,7 @@ export default {
   bottom: 60px;
 }
 .content{
-  margin: 0 auto;
+  margin: 40px auto 0 ;
   min-height: 1500px;
 }
 </style>
