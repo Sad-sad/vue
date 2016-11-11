@@ -2,7 +2,7 @@
   <h3>tab切换</h3>
   <div class="title">
     <ul>
-      <li :class="{active:$index == 0}"
+      <li :class="{active:$index == index}"
           v-for='item in title'
           @click="tab($index)">{{ item }} </li>
     </ul>
