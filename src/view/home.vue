@@ -14,6 +14,7 @@
         <li v-link="{ path:'/tab' }">tab 切换</li>
         <li v-link="{ path:'/map' }">地图</li>
         <li v-link="{ path:'/select' }">select</li>
+        <li v-link="{ path:'/countdown' }">倒计时</li>
       </ul>
     </div>
   </div>

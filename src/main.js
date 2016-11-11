@@ -11,6 +11,7 @@ import form from './view/form.vue'
 import tab from './view/tab.vue'
 import map from './view/map.vue'
 import select from './view/select.vue'
+import countdown from './view/countdown.vue'
 Vue.use(VueRouter)
 Vue.use(VueResource)
 // 实例化vue-router
@@ -38,6 +39,9 @@ router.map({
         },
         '/select': {
           component:select
+        },
+        '/countdown': {
+          component:countdown
         }
       }
     }
